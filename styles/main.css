@@ -1,6 +1,6 @@
 .criminals {
     border: 1px dotted black;
-    width: 300px;
+    width: 250px;
     padding: 10px;
     margin: 10px;
 }
@@ -8,4 +8,8 @@
 .criminalsList {
     display: flex;
     flex-wrap: wrap;
+}
+
+p {
+    margin: 5px;
 }
