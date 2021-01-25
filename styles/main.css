@@ -1,0 +1,11 @@
+.criminals {
+    border: 1px dotted black;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.criminalsList {
+    display: flex;
+    flex-wrap: wrap;
+}
