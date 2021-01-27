@@ -59,6 +59,7 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
 })
 
 eventHub.addEventListener("officerSelected", officerChosenEvent => {
+    if (officerChosenEvent.detail.officer !== "0") {
     // How can you access the officer name that was selected by the user?
     const officerName = officerChosenEvent.detail.officer
 
@@ -71,6 +72,6 @@ eventHub.addEventListener("officerSelected", officerChosenEvent => {
             }
         }
     )
-
     renderToDom(filteredCriminalsArray)
+    }
 })
