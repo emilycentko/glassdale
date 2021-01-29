@@ -12,12 +12,23 @@
     <main class="container">
         <header>
             <div class="filters">
+                <p>Filter by Crime</p>
                 <div class="filter filters__crime"></div>
                 <div class="filter filters__incarceration"></div>
+                <p>Filter by Arresting Officer</p>
                 <div class="filter filters__officer"></div>
             </div>
         </header>
-        <article class="criminalsContainer"></article>
+
+        <div class="mainContent">
+            <article class="criminalsContainer" id="criminalsContainer"></article>
+            <aside class="noteListContainer">
+                <h3>Case Note:</h3>
+                <article class="noteFormContainer"></article>
+                <div class="noteListButton"></div>
+            </aside>
+        </div>
+
         <article class="officersContainer"></article>
     </main>
 
@@ -25,3 +36,10 @@
 </body>
 
 </html>
+
+<!-- <aside class="noteListContainer"></aside>
+<article class="noteFormContainer"></article>
+<div class="noteListButton"></div>
+<div class="mainContent">
+<article class="criminalsContainer" id="criminalsContainer"></article>
+</div>

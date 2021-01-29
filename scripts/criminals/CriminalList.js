@@ -13,7 +13,7 @@ const renderToDom = (criminalCollection) => {
     }
 
     criminalsContainer.innerHTML = `
-                <h3>Glassdale Criminals</h3>
+                <h2>Glassdale Criminals</h2>
                 <section class="criminalsList">
                 ${criminalsHTMLRepresentation}
                 </section>`
