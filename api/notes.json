@@ -1,36 +1,6 @@
 {
   "notes": [
     {
-      "text": "burgled",
-      "date": "02/02/2020",
-      "suspect": "jordane",
-      "id": 1
-    },
-    {
-      "text": "thefted",
-      "date": "01/02/2021",
-      "suspect": "michel",
-      "id": 2
-    },
-    {
-      "text": "thefted",
-      "date": "01/02/2021",
-      "suspect": "michel",
-      "id": 3
-    },
-    {
-      "text": "sus",
-      "date": "01/25/2021",
-      "suspect": "Montana",
-      "id": 4
-    },
-    {
-      "text": "",
-      "date": "",
-      "suspect": "",
-      "id": 5
-    },
-    {
       "text": "sus",
       "date": "01/29/201",
       "suspect": "new suspect",
@@ -57,6 +27,27 @@
       "suspect": "sus",
       "author": "author",
       "id": 9
+    },
+    {
+      "text": "note",
+      "date": "date",
+      "suspect": "sus",
+      "author": "author",
+      "id": 10
+    },
+    {
+      "text": "note",
+      "date": "date",
+      "suspect": "sus",
+      "author": "author",
+      "id": 11
+    },
+    {
+      "text": "note",
+      "date": "date",
+      "suspect": "sus",
+      "author": "author",
+      "id": 12
     }
   ]
 }
