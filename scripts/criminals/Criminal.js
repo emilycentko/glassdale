@@ -1,3 +1,5 @@
+import { ShowAlibiButton } from "../alibis/AlibiButton.js"
+
 export const Criminal = (criminal) => {
     return `
         <div class="criminals">
@@ -6,6 +8,7 @@ export const Criminal = (criminal) => {
             <p class="criminal_crime">Crime: ${criminal.conviction}</p>
             <p class="criminal_term_start">Term start: ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}</p>
             <p class="criminal_term_end">Term end: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}</p>
-        </div>
+            ${ShowAlibiButton(criminal)}
+            </div>
     `
 }
