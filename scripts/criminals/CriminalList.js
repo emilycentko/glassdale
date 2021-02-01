@@ -28,6 +28,8 @@ export const CriminalList = () => {
         
 }
 
+// Filter by crime //
+
 // Listen for the custom event you dispatched in ConvictionSelect
 eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
     // Use the property you added to the event detail.
@@ -58,6 +60,8 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
     }
 })
 
+// Filter by officer //
+
 eventHub.addEventListener("officerSelected", officerChosenEvent => {
     if (officerChosenEvent.detail.officer !== "0") {
     // How can you access the officer name that was selected by the user?
@@ -75,3 +79,4 @@ eventHub.addEventListener("officerSelected", officerChosenEvent => {
     renderToDom(filteredCriminalsArray)
     }
 })
+
