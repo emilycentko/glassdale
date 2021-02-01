@@ -1,8 +1,8 @@
 import { useCriminals } from "../criminals/CriminalDataProvider.js"
-import { NoteForm } from "../notes/NoteForm.js"
+
+const contentContainer = document.querySelector(".alibisContainer")
 
 export const AlibisList = (criminal) => {
-    const contentContainer = document.querySelector(".alibisContainer")
     const AlibiHTMLRepresentation = `
         <div id="alibi_modal" class="modal_parent">
             <div class="modal_content">
@@ -13,7 +13,7 @@ export const AlibisList = (criminal) => {
                 <div class="associate_alibi">Associate alibi: ${associate.alibi}</div>
                 </section>`
             }).join("")}
-                <button id="modal_close">Close window</button>    
+                <button id="modal_close">Close</button>    
             </div>
         </div>`
 
