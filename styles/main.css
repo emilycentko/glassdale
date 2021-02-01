@@ -1,9 +1,32 @@
 @import "./modal.css";
 
+/* Styling */
+
+body {
+    background-color: #E8F8F5;
+}
+
 /*Header*/
 
 .filters {
-    margin: 20px;
+    margin-left: 60px;
+}
+
+header {
+    background: #FFFFF6;
+    padding: 30px;
+    color: #0B5345;
+    border-radius: 10px;
+    border: 2px solid #0B5345;;
+}
+
+header h1 {
+    text-align: center;
+    color: #0B5345;
+}
+
+h2 {
+    color: #0B5345;
 }
 
 /*Criminals Boxes*/
@@ -13,6 +36,8 @@
     width: 200px;
     padding: 10px;
     margin: 10px;
+    background-color: #0B5345;
+    color: #E8F8F5;
 }
 
 /*Criminals*/
@@ -48,9 +73,9 @@ p {
 .noteListContainer {
     width: 20%;
     padding: 30px;
-    border: 1px dotted black;
     align-items: center;
     height: 1000px;
+    color: #0B5345;
 }
 
 .noteFormContainer {
