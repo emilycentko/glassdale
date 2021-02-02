@@ -11,8 +11,8 @@ const render = (witnessArray) => {
     witnessStatementsHTMLRepresentation += Witness(witness)
 
     contentTarget.innerHTML = `
-    <h3>Witness Statements</h3>    
-        <div class="witness_statements>
+    <h1>Witness Statements</h1>    
+        <div class="witnessStatements">
             ${witnessStatementsHTMLRepresentation}
         </div>
     `

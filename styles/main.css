@@ -21,7 +21,7 @@ header {
     padding: 30px;
     color: #0B5345;
     border-radius: 10px;
-    border: 2px solid #0B5345;;
+    border: 2px solid #0B5345;
 }
 
 header h1 {
@@ -87,7 +87,7 @@ p {
     flex-direction: column;
 }
 
-/*Buttons*/
+/*Notes Buttons*/
 
 button {
     margin: 5px;
@@ -99,4 +99,21 @@ button {
 
 #showNotes {
     width: 90px;
+}
+
+/* Witnesses */
+
+.witnessesContainer {
+    color: #0B5345;
+    text-align: center;
+}
+
+.witnesses {
+    background: #FFFFF6;
+    color: #0B5345;
+    align-items: center;
+    border: 2px solid #0B5345;
+    border-radius: 10px;
+    margin: 30px 200px; 
+    padding: 15px;
 }
