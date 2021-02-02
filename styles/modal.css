@@ -16,6 +16,8 @@
     width: 50%; /* Could be more or less, depending on screen size */
     box-shadow: 0px 0px 5px 0px black;
     text-align: center;
+    background: #FFFFF6;
+    color: #0B5345;
 }
 
 .associate_container {

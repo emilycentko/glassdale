@@ -12,6 +12,10 @@ body {
     margin-left: 60px;
 }
 
+.witnessesButton, .criminalsButton {
+    margin-left: 60px;
+}
+
 header {
     background: #FFFFF6;
     padding: 30px;

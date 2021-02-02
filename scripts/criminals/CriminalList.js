@@ -80,3 +80,8 @@ eventHub.addEventListener("officerSelected", officerChosenEvent => {
     }
 })
 
+eventHub.addEventListener("witnessesClicked", () => {
+    criminalsContainer.innerHTML = ""
+})
+
+eventHub.addEventListener("criminalsClicked", () => CriminalList())
