@@ -14,8 +14,7 @@ eventHub.addEventListener("showNotesClicked", customEvent => {
 const render = (noteArray, criminalCollection) => {
     contentTarget.innerHTML = noteArray.map(noteObject => {
          // Find the related criminal
-         const relatedCriminal = criminalCollection.find(criminal => criminal.id === noteObject.criminalId)
-
+         const relatedCriminal = criminalCollection.find(criminal => criminal.id === parseInt(noteObject.criminal))
     // convert the notes objects to HTML with NoteHTMLConverter
     return `
             <section class="notesList">
@@ -23,7 +22,7 @@ const render = (noteArray, criminalCollection) => {
                 ${noteObject.text}
             </section>
         `
-    })
+    }).join("")
 }
 
 // Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
