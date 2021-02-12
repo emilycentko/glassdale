@@ -1,67 +1,11 @@
 {
   "notes": [
     {
-      "text": "note",
-      "date": "2/11/2021",
-      "criminal": "1",
-      "author": "verne",
-      "id": 13
-    },
-    {
-      "text": "note",
-      "date": "02/11/2021",
-      "criminal": "1",
-      "author": "verne",
-      "id": 14
-    },
-    {
-      "text": "",
-      "date": "",
-      "criminal": "1",
-      "author": "",
-      "id": 15
-    },
-    {
-      "text": "",
-      "date": "",
-      "criminal": "1",
-      "author": "",
-      "id": 16
-    },
-    {
-      "text": "",
-      "date": "",
-      "criminal": "1",
-      "author": "",
-      "id": 17
-    },
-    {
-      "text": "",
-      "date": "",
-      "criminal": "1",
-      "author": "",
-      "id": 18
-    },
-    {
-      "text": "",
-      "date": "",
-      "criminal": "1",
-      "author": "",
-      "id": 19
-    },
-    {
-      "text": "",
-      "date": "",
-      "criminal": "1",
-      "author": "",
-      "id": 20
-    },
-    {
-      "text": "note",
-      "date": "2/22/2021",
-      "criminal": "21",
-      "author": "author",
-      "id": 21
+      "text": "suspicious",
+      "date": "01/22/2021",
+      "criminalId": 9,
+      "author": "gino",
+      "id": 2
     }
   ]
 }
