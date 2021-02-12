@@ -6,6 +6,9 @@ const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
 
+
+// fetch notes api
+
 let notes = []
 
 export const getNotes = () => {
@@ -17,9 +20,14 @@ export const getNotes = () => {
 
 }
 
+// get copy of notes array
+
 export const useNotes = () => {
     return notes.slice()
 }
+
+
+// fetch to POST save notes 
 
 export const saveNote = noteObject => {
     return fetch('http://localhost:8088/notes', {
@@ -31,4 +39,13 @@ export const saveNote = noteObject => {
     })
     .then(getNotes)
     .then(dispatchStateChangeEvent)
+}
+
+// fetch to delete notes
+
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
 }

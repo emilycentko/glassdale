@@ -1,4 +1,4 @@
-import { getNotes, useNotes } from "./NoteDataProvider.js";
+import { getNotes, useNotes, deleteNote } from "./NoteDataProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
 import { useCriminals, getCriminals } from '../criminals/CriminalDataProvider.js'
 
@@ -12,31 +12,6 @@ const eventHub = document.querySelector(".container")
 eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
 })
-
-
-// Render saved notes
-
-// const render = (noteArray, criminalCollection) => {
-//     const allNotesConvertedToStrings = noteArray.map(noteObject => {
-//          // Find the related criminal
-//     const relatedCriminal = criminalCollection.find(criminal => criminal.id === noteObject.criminalId)
-//     // convert the notes objects to HTML with NoteHTMLConverter
-//     contentTarget.innerHTML = `
-//             <section class="notesList">
-//                 <h3>Note about ${relatedCriminal.name}</h3>
-//                 ${allNotesConvertedToStrings}
-//             </section>
-//         `
-//     }).join("")
-// }
-
-/* <section class="notesList">
-<h3>Note about ${relatedCriminal.name}</h3>
-<p>${noteObject.date}</p>
-<p>${noteObject.author}</p>
-<p>${noteObject.text}</p>
-</section>
-` }*/
 
 const render = (noteArray, criminalCollection) => {
     const allNotesConvertedToStrings = noteArray.map(noteObject => {
@@ -68,5 +43,25 @@ export const NoteList = () => {
 eventHub.addEventListener("noteStateChanged", event => {
     if (contentTarget.innerHTML !== "") {
     NoteList()
+    }
+})
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useNotes() and render the note list again.
+        */
+       deleteNote(id)
+       .then(() => {
+               const updatedNotes = useNotes()
+               const criminals = useCriminals()
+               render(updatedNotes, criminals)
+           }
+       )
     }
 })
