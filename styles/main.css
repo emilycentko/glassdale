@@ -35,7 +35,7 @@ h2 {
 
 /*Criminals Boxes*/
 
-.criminals {
+.criminal {
     border: 1px dotted black;
     width: 200px;
     padding: 10px;
@@ -46,7 +46,7 @@ h2 {
 
 /*Criminals*/
 
-.criminalsList {
+.criminalsContainer {
     display: flex;
     flex-wrap: wrap;
 }
