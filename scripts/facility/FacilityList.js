@@ -1,35 +1,48 @@
-import { useFacilities, getFacilities } from "./WitnessDataProvider.js"
-import { Facility } from "./Witness.js"
+import { useFacilities, getFacilities } from "./FacilityProvider.js"
+import { useCriminalFacilities, getCriminalFacilities } from "./CriminalFacilityProvider.js"
+import { Facility } from "./Facility.js"
+import { useCriminals, getCriminals } from "./../criminals/CriminalDataProvider.js"
 
-const contentTarget = document.querySelector(".witnessesContainer")
+const contentTarget = document.querySelector(".facilitiesContainer")
 const eventHub = document.querySelector(".container")
 
-const render = (witnessArray) => {
-    let witnessStatementsHTMLRepresentation = ""
-    for (const witness of witnessArray)
+const renderToDom = (criminalCollection, allFacilities, allRelationships) => {
+    // Step 1 - Iterate all facilities
+    contentTarget.innerHTML = allFacilities.map((facility) => {
+            // Step 2 - Filter all relationships to get only ones for this facility
+            const criminalRelationshipsForThisFacility = allRelationships.filter(cf => cf.facilityId === facility.id)
 
-    witnessStatementsHTMLRepresentation += Witness(witness)
+            // Step 3 - Convert the relationships to criminals with map()
+            const criminals = criminalRelationshipsForThisFacility.map(cf => {
+                const matchingCriminalObject = criminalCollection.find(criminal => criminal.id === cf.criminalId)
+                return matchingCriminalObject
+            })
 
-    contentTarget.innerHTML = `
-    <h1>Witness Statements</h1>    
-        <div class="witnessStatements">
-            ${witnessStatementsHTMLRepresentation}
-        </div>
-    `
+            // Must pass the matching facilities to the Facility component
+            return Facility(facility, criminals)
+        }
+    ).join("")}
+
+export const FacilitiesList = () => {
+    getFacilities()
+        .then(getCriminalFacilities)
+        .then(getCriminals)
+        .then(() => {
+            // Pull in the data now that it has been fetched
+            const facilities = useFacilities()
+            const crimFac = useCriminalFacilities()
+            const criminals = useCriminals()
+
+            // Pass all three collections of data to render()
+            renderToDom(criminals, facilities, crimFac)
+        })
 }
 
-const WitnessList = () => {
-    getWitnesses()
-    .then(() => {
-        const allWitnesses = useWitnesses()
-        render(allWitnesses)
-    })
-}
-
-eventHub.addEventListener("witnessesClicked", witnessesButtonClicked => {
-    WitnessList()
+eventHub.addEventListener("facilitiesButtonClicked", facilitiesButtonClicked => {
+    console.log("click happened", facilitiesButtonClicked)
+    FacilitiesList()
 })
 
-eventHub.addEventListener("criminalsClicked", () => {
+eventHub.addEventListener("facilitiesButtonClicked", () => {
     contentTarget.innerHTML = ""
 })

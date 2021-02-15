@@ -8,7 +8,7 @@ export const Facility = (facility, criminals) => {
             <div>
                 <h4>Criminals</h4>
                 <ul>
-                    ${criminals.map(c => `<li>${c.name}</li>`).join("")}
+                    ${criminals.map(criminal => `<li>${criminal.name}</li>`).join("")}
                 </ul>
             </div>
         </div>
