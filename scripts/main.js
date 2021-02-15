@@ -7,7 +7,6 @@ import "./notes/NoteList.js"
 import { WitnessesButton } from "./witnesses/WitnessButton.js"
 import "./witnesses/WitnessList.js"
 import { CriminalsButton } from "./criminals/CriminalButton.js"
-import { getCriminals } from "./criminals/CriminalDataProvider.js"
 
 
 NoteForm()
@@ -17,5 +16,3 @@ OfficerSelect()
 ShowNoteButton()
 WitnessesButton()
 CriminalsButton()
-// getCriminals()
-//     .then(NoteForm)
