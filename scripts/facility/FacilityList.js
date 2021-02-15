@@ -2,6 +2,7 @@ import { useFacilities, getFacilities } from "./FacilityProvider.js"
 import { useCriminalFacilities, getCriminalFacilities } from "./CriminalFacilityProvider.js"
 import { Facility } from "./Facility.js"
 import { useCriminals, getCriminals } from "./../criminals/CriminalDataProvider.js"
+import { CriminalList } from "../criminals/CriminalList.js"
 
 const contentTarget = document.querySelector(".facilitiesContainer")
 const eventHub = document.querySelector(".container")
@@ -38,11 +39,14 @@ export const FacilitiesList = () => {
         })
 }
 
+// display facilities once button is clicked
+
 eventHub.addEventListener("facilitiesButtonClicked", facilitiesButtonClicked => {
-    console.log("click happened", facilitiesButtonClicked)
     FacilitiesList()
 })
 
-eventHub.addEventListener("facilitiesButtonClicked", () => {
+// display criminals button clicked
+
+eventHub.addEventListener("criminalsClicked", () => {
     contentTarget.innerHTML = ""
 })

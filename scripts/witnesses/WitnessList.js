@@ -26,10 +26,20 @@ const WitnessList = () => {
     })
 }
 
+//display witness list once button clicked
+
 eventHub.addEventListener("witnessesClicked", witnessesButtonClicked => {
     WitnessList()
 })
 
+//display criminals list once button clicked
+
 eventHub.addEventListener("criminalsClicked", () => {
+    contentTarget.innerHTML = ""
+})
+
+//display facilities list once button clicked
+
+eventHub.addEventListener("facilitiesButtonClicked", () => {
     contentTarget.innerHTML = ""
 })
