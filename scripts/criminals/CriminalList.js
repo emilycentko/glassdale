@@ -110,12 +110,17 @@ eventHub.addEventListener("officerSelected", officerChosenEvent => {
     }
 })
 
-// witnesses button clicked
+// display witness list once button clicked
 
 eventHub.addEventListener("witnessesClicked", () => {
     criminalsContainer.innerHTML = ""
 })
 
-// display criminals button (to get back to criminals display from witness statements)
+// display facilities list once button clicked
+eventHub.addEventListener("facilitiesButtonClicked", () => {
+    criminalsContainer.innerHTML = ""
+})
+
+// display criminals list once button is clicked
 
 eventHub.addEventListener("criminalsClicked", () => CriminalList())
